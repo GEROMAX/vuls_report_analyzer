@@ -1,9 +1,7 @@
 require 'rexml/document'
 
 report_path = ARGV[0]
-if !FileTest.exist?(report_path)
-    report_path = 'vuls_report.xml'
-end
+report_path ||= 'vuls_report.xml'
 if !FileTest.exist?(report_path)
     puts 'vuls report file not found.'
     exit
